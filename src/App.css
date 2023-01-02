@@ -1,0 +1,27 @@
+* {
+
+}
+
+.todo {
+    border: solid black 1px;
+    display: grid;
+    justify-content: center;
+    margin-left:10%
+    
+}
+
+.title {
+    width: 250px;
+    display: grid;
+    justify-content: center;
+    margin-left:5%
+}
+
+.main-par {
+
+
+}
+
+.next {
+    
+}
