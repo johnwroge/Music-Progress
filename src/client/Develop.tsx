@@ -2,15 +2,15 @@ import React from 'react';
 import {useLocation} from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export default function Todos (){
+export default function Develop (){
 
     const location = useLocation();
 
     const [formData, setFormData] = React.useState(
         {
-            piece: "",
-            number: "",
-            plan: "",
+            developing: "",
+            refinement: "",
+            memorize: "",
         }
     )
 
@@ -30,9 +30,9 @@ export default function Todos (){
         
         setFormData(
             {
-            piece: "",
-            number: "",
-            plan: "",
+            developing: "",
+            refinement: "",
+            memorize: "",
         }
         )
     }
@@ -41,33 +41,32 @@ export default function Todos (){
         <div className = "todo"> 
        
         <form onSubmit={handleSubmit} >
-            <h2> New Material </h2>
+            <h2> Developing Material </h2>
             <h5> What piece do you want to add? </h5>
                 <input 
                     type="text"
-                    placeholder="New music"
+                    placeholder="developing material"
                     onChange={handleChange}
-                    name="piece"
-                    value={formData.piece}
+                    name="developing"
+                    value={formData.developing}
                     >
                 </input>
                 <br />
-                <h5> How many measures are there? </h5>
-                <input 
-                    type="text"
-                    placeholder="Enter a number"
-                    onChange={handleChange}
-                    name="number"
-                    value={formData.number}
-                    >
-                </input>
-                <br />
-                <h5> What is your technical plan? </h5>
+                <h5> How are you refining the interpretation? </h5>
                 <textarea 
-                     placeholder="Plan..."
+                     placeholder="Refinement..."
                      onChange={handleChange}
-                     name="plan"
-                     value={formData.plan}
+                     name="refinement"
+                     value={formData.refinement}
+                    >
+                </textarea>
+                <br />
+                <h5> How are you working on memorizing this repertoire? </h5>
+                <textarea 
+                     placeholder="Plan to memorize..."
+                     onChange={handleChange}
+                     name="memorize"
+                     value={formData.memorize}
                     >
                 </textarea>
            <button> 
@@ -75,14 +74,17 @@ export default function Todos (){
             </button>
         </form>
             <Link
-                to = "/develop"
+                to = "/performance"
                 state = {{
-                    piece: formData.piece,
-                    number: formData.number,
-                    plan: formData.plan
+                    piece: location.state.piece,
+                    number: location.state.number,
+                    plan: location.state.plan,
+                    developing: formData.developing,
+                    refinement: formData.refinement,
+                    memorize: formData.memorize
                    }}
             >
-            <button className="next"> Move on to Developing Material </button>
+            <button className="next"> Move on to Performance Material </button>
             </Link>
         </div>
     )
