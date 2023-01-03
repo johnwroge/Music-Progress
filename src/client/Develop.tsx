@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Develop (){
 
     const location = useLocation();
-
+    console.log(location.state)
     const [formData, setFormData] = React.useState(
         {
             developing: "",
@@ -28,13 +28,13 @@ export default function Develop (){
     const handleSubmit = (event: any) => {
         event.preventDefault();
         
-        setFormData(
-            {
-            developing: "",
-            refinement: "",
-            memorize: "",
-        }
-        )
+        // setFormData(
+        //     {
+        //     developing: "",
+        //     refinement: "",
+        //     memorize: "",
+        // }
+        // )
     }
 
     return (

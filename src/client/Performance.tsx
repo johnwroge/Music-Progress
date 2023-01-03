@@ -28,13 +28,13 @@ export default function Performance (){
     const handleSubmit = (event: any) => {
         event.preventDefault();
         
-        setFormData(
-            {
-            perform: "",
-            memory: "",
-            renew: "",
-        }
-        )
+        // setFormData(
+        //     {
+        //     perform: "",
+        //     memory: "",
+        //     renew: "",
+        // }
+        // )
     }
 
     return (

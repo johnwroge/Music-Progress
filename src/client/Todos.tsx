@@ -28,13 +28,13 @@ export default function Todos (){
     const handleSubmit = (event: any) => {
         event.preventDefault();
         
-        setFormData(
-            {
-            piece: "",
-            number: "",
-            plan: "",
-        }
-        )
+        // setFormData(
+        //     {
+        //     piece: "",
+        //     number: "",
+        //     plan: "",
+        // }
+        // )
     }
 
     return (
