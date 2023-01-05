@@ -2,17 +2,17 @@ import React from 'react';
 import {useLocation} from "react-router-dom";
 import { Link } from "react-router-dom";
 
-// need to add technique component to router before final summary
+// component to be added to 2nd last page
 
-export default function Performance (){
+export default function Technique (){
 
     const location = useLocation();
-
+    console.log(location.state)
     const [formData, setFormData] = React.useState(
         {
-            perform: "",
-            memory: "",
-            renew: "",
+            technique: "",
+            musicianship: "",
+            diction: "",
         }
     )
 
@@ -32,9 +32,9 @@ export default function Performance (){
         
         // setFormData(
         //     {
-        //     perform: "",
-        //     memory: "",
-        //     renew: "",
+        //     developing: "",
+        //     refinement: "",
+        //     memorize: "",
         // }
         // )
     }
@@ -43,32 +43,32 @@ export default function Performance (){
         <div className = "todo"> 
        
         <form onSubmit={handleSubmit} >
-            <h2> Performance Material </h2>
-            <h5> What piece do you want to add? </h5>
+            <h2> Technique Exercises</h2>
+            <h5> What technique exercises would you like to add </h5>
                 <input 
                     type="text"
-                    placeholder="Piece to Perform"
+                    placeholder="technical exercises"
                     onChange={handleChange}
-                    name="perform"
-                    value={formData.perform}
+                    name="technique"
+                    value={formData.technique}
                     >
                 </input>
                 <br />
-                <h5> How are you maintaining your memory for this piece </h5>
+                <h5> What type of additional topics can help better you as a musician? </h5>
                 <textarea 
-                     placeholder="Plan..."
+                     placeholder="Musicianship"
                      onChange={handleChange}
-                     name="memory"
-                     value={formData.memory}
+                     name="musicianship"
+                     value={formData.musicianship}
                     >
                 </textarea>
                 <br />
-                <h5> How are you working on renewing this material? </h5>
+                <h5> How are you working on memorizing this repertoire? </h5>
                 <textarea 
-                     placeholder="Plan..."
+                     placeholder="Intstrument specific work"
                      onChange={handleChange}
-                     name="renew"
-                     value={formData.renew}
+                     name="diction"
+                     value={formData.diction}
                     >
                 </textarea>
            <button> 
@@ -76,7 +76,7 @@ export default function Performance (){
             </button>
         </form>
             <Link
-                to = "/summary"
+                to = "/performance"
                 state = {{
                     piece: location.state.piece,
                     number: location.state.number,
@@ -84,12 +84,12 @@ export default function Performance (){
                     developing: location.state.developing,
                     refinement: location.state.refinement,
                     memorize: location.state.memorize,
-                    perform: formData.perform,
-                    memory: formData.memory,
-                    renew: formData.renew
+                    technique: formData.technique,
+                    musicianship: formData.musicianship , 
+                    diction: formData.diction,
                    }}
             >
-            <button className="next"> Move on to Summary </button>
+            <button className="next"> Move on to Performance Material </button>
             </Link>
         </div>
     )

@@ -8,6 +8,7 @@ import Title from './client/Title';
 import Develop from './client/Develop';
 import Performance from './client/Performance';
 import Summary from './client/Summary';
+import Technique from './client/Technique';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path = "/todo" element= {<Todos/>} />
       <Route path = "/develop" element = {<Develop/>} />
       <Route path = "/performance" element = {<Performance/>} />
+      <Route path = "/technique" element = {<Technique/>} />
       <Route path = "/summary" element = {<Summary/>} />
     </Routes>
   )
