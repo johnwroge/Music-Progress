@@ -18,7 +18,11 @@ export default function Summary (){
        const perform = location.state.perform;
        const memory = location.state.memory;
        const renew = location.state.renew;
-       console.log(location.state)
+        //technique material
+       const diction = location.state.diction; 
+       const technique = location.state.technique;
+       const musicianship = location.state.musicianship; 
+
       
     return (
         <div > 
@@ -27,7 +31,7 @@ export default function Summary (){
             
             <h3 className='summary-title'> New Material </h3>
                 <div> Keep learning {piece} by working on 2 of {number} measures per day. 
-                 Rember Divide into Sections. Establish interpretative/technical plan and maintain slow tempo until you have a feel for the music 
+                 Remember to divide into Sections. Establish interpretative/technical plan and maintain slow tempo until you have a feel for the music 
                 <br/>
                 Technical Plan: {plan}</div>
 
@@ -51,9 +55,12 @@ export default function Summary (){
                     <br/>
                 </div>
             <h3 className='summary-title'> Technique </h3>
-                <div> </div>
+                <div>
+                    {technique}
+                </div>
             <h3 className='summary-title'> Musicianship </h3>
-                <div> </div>
+                <div> {musicianship} </div>
+                <div> {diction} </div>
             <Link
                 to = "/"
             >

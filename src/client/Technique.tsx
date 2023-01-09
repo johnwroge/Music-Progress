@@ -76,7 +76,7 @@ export default function Technique (){
             </button>
         </form>
             <Link
-                to = "/performance"
+                to = "/summary"
                 state = {{
                     piece: location.state.piece,
                     number: location.state.number,
@@ -84,9 +84,12 @@ export default function Technique (){
                     developing: location.state.developing,
                     refinement: location.state.refinement,
                     memorize: location.state.memorize,
+                    perform: location.state.perform,
+                    memory: location.state.memory,
+                    renew: location.state.renew,
                     technique: formData.technique,
                     musicianship: formData.musicianship , 
-                    diction: formData.diction,
+                    diction: formData.diction, 
                    }}
             >
             <button className="next"> Move on to Performance Material </button>

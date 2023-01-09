@@ -76,7 +76,7 @@ export default function Performance (){
             </button>
         </form>
             <Link
-                to = "/summary"
+                to = "/technique"
                 state = {{
                     piece: location.state.piece,
                     number: location.state.number,
