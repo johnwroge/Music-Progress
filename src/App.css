@@ -1,20 +1,33 @@
 * {
+   background: whitesmoke;;
+   
+}
 
+.outer-main {
+    /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); */
+    background-image: url('../public/music.png'); 
+    background-repeat: no-repeat;
+    display: grid;
+    margin-top: 50px;
+    margin-left: 550px;
 }
 
 .todo {
     border: solid black 1px;
     display: grid;
     justify-content: center;
-    margin-left:10%
-    
+    align-items: center;
+    margin: 250px 250px 250px -100px;
+    border-radius: 20px;
+    width: 500px;
+    height: 200px;
 }
 
 .title {
     width: 250px;
     display: grid;
     justify-content: center;
-    margin-left:5%
+    margin-left: 15%;
 }
 
 .main-par {
@@ -23,7 +36,7 @@
 }
 
 .next {
-    
+    margin-left: 40%;
 }
 
 .summary-title {
