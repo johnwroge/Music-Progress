@@ -40,7 +40,7 @@ export default function Performance (){
     }
 
     return (
-        <div className = "todo"> 
+        <div className = "todo2"> 
        
         <form onSubmit={handleSubmit} >
             <h2> Performance Material </h2>
@@ -71,7 +71,7 @@ export default function Performance (){
                      value={formData.renew}
                     >
                 </textarea>
-           <button> 
+           <button className='next'> 
             Submit 
             </button>
         </form>

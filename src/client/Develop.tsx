@@ -38,7 +38,7 @@ export default function Develop (){
     }
 
     return (
-        <div className = "todo"> 
+        <div className = "todo2"> 
        
         <form onSubmit={handleSubmit} >
             <h2> Developing Material </h2>
@@ -69,7 +69,7 @@ export default function Develop (){
                      value={formData.memorize}
                     >
                 </textarea>
-           <button> 
+           <button className='next'> 
             Submit 
             </button>
         </form>

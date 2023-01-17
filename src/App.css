@@ -12,7 +12,7 @@
     margin-left: 550px;
 }
 
-.todo {
+.todoTitle {
     border: solid black 1px;
     display: grid;
     justify-content: center;
@@ -22,6 +22,19 @@
     width: 500px;
     height: 200px;
 }
+
+.todo2 {
+    text-align: center;
+    border: solid black 1px;
+    display: grid;
+    justify-content: center;
+  width: 40%;
+   margin: auto;
+    border-radius: 20px;
+    /* width: 500px; */
+    height: 600px;
+}
+
 
 .title {
     width: 250px;
@@ -34,9 +47,9 @@
 
 
 }
-
+/* need button styling */
 .next {
-    margin-left: 40%;
+  
 }
 
 .summary-title {
