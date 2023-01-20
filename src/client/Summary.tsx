@@ -1,6 +1,7 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
 import { Link } from "react-router-dom";
+import { PDFViewer } from '@react-pdf/renderer';
 
 export default function Summary (){
 
@@ -23,7 +24,8 @@ export default function Summary (){
        const technique = location.state.technique;
        const musicianship = location.state.musicianship; 
 
-      
+       //need to fix download pdf issue, tried two different methods and neither worked 
+
     return (
         <div > 
        
@@ -61,11 +63,27 @@ export default function Summary (){
             <h3 className='summary-title'> Musicianship </h3>
                 <div> {musicianship} </div>
                 <div> {diction} </div>
+
+                {/*  */}
+
             <Link
                 to = "/"
             >
+
             <button className="next"> Back to Homepage </button>
             </Link>
+
+             {/* <Link
+                to="route"
+                onClick={(event) => { event.preventDefault(); window.open(filePath); }}>
+                    Click to download
+            </Link> */}
+
         </div>
     )
 }
+
+
+
+
+
