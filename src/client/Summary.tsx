@@ -1,14 +1,16 @@
 import React from 'react';
+import { useRef } from 'react'
 import {useLocation} from "react-router-dom";
 import { Link } from "react-router-dom";
-import { PDFViewer } from '@react-pdf/renderer';
+import { jsPDF } from 'jspdf';
 
-export default function Summary (){
+export default function Summary (this: any){
 
     const location = useLocation();
+    const reportTemplateRef: any = useRef(null);
 
         //new material
-       const piece = location.state.piece;
+       const piece = String(location.state.piece);
        const number = location.state.number;
        const plan = location.state.plan;
         //developing material
@@ -26,9 +28,35 @@ export default function Summary (){
 
        //need to fix download pdf issue, tried two different methods and neither worked 
 
+    const handleGeneratePdf = () => {
+		// const doc = new jsPDF({
+		// 	format: 'a4',
+        //     // format: [4,2],
+		// 	unit: 'px',
+		// });
+
+        const doc = new jsPDF({
+            orientation: 'l',
+            unit: 'pt',
+            format: 'a4',
+            putOnlyUsedFonts:true,
+            floatPrecision: 4 // or "smart", default is 16
+        })
+
+    doc.setFont('Inter-Regular', 'normal');
+
+	doc.html(reportTemplateRef.current, {
+		async callback(doc) {
+		await doc.save('document');
+			},
+		});
+	};
+
+
+        
     return (
-        <div > 
-       
+        <div className = "summary" > 
+       <div ref = {reportTemplateRef} > 
         <h2>Your Personalized Practice Sheet</h2> 
             
             <h3 className='summary-title'> New Material </h3>
@@ -63,22 +91,15 @@ export default function Summary (){
             <h3 className='summary-title'> Musicianship </h3>
                 <div> {musicianship} </div>
                 <div> {diction} </div>
-
-                {/*  */}
+             </div>
 
             <Link
                 to = "/"
             >
-
             <button className="next"> Back to Homepage </button>
             </Link>
 
-             {/* <Link
-                to="route"
-                onClick={(event) => { event.preventDefault(); window.open(filePath); }}>
-                    Click to download
-            </Link> */}
-
+            <button onClick ={handleGeneratePdf}> Download PDF </button>
         </div>
     )
 }

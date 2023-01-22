@@ -89,7 +89,7 @@ export default function Performance (){
                     renew: formData.renew
                    }}
             >
-            <button className="next"> Move on to Summary </button>
+            <button className="next"> Move on to Technique </button>
             </Link>
         </div>
     )

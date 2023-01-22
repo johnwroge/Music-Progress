@@ -92,7 +92,7 @@ export default function Technique (){
                     diction: formData.diction, 
                    }}
             >
-            <button className="next"> Move on to Performance Material </button>
+            <button className="next"> Move on to Summary Page </button>
             </Link>
         </div>
     )
