@@ -1,3 +1,4 @@
-*{
-    background-color: lightblue;
+.app {
+    /* background-color: lightblue; */
+    background: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #54f1e1 100%);
 }

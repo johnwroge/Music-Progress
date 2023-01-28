@@ -7,7 +7,7 @@ export default function Title (){
         
         <div className = "outer-main"> 
             <div className='todoTitle'>
-            <h1 className='title'> Muse Tracker </h1>
+            <h1 className='title'> Welcome to Music Progress </h1>
             <h4> Fill out the text areas to create a new practice sheet! </h4>
             <Link
                     to = "/todo"
