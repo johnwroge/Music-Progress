@@ -52,6 +52,9 @@ export default function Summary (this: any){
 		});
 	};
 
+    const suggestions = ['Remember to divide into Sections.','Establish interpretative/technical plan and maintain slow tempo until you have a feel for the music ',
+'Once you have a grasp of and can play the piece slowly while sight reading.', 'Work on increasing the tempo while memorizing the music.', 'Refine the overall interpretation of the piece. '
+ ]
 
         
     return (
@@ -60,15 +63,14 @@ export default function Summary (this: any){
         <h2>Your Personalized Practice Sheet</h2> 
             
             <h3 className='summary-title'> New Material </h3>
-                <div> Keep learning {piece} by working on 2 of {number} measures per day. 
-                 Remember to divide into Sections. Establish interpretative/technical plan and maintain slow tempo until you have a feel for the music 
+                <div> New Piece: {piece} Number of Measures: {number} 
+                  
                 <br/>
                 Technical Plan: {plan}</div>
 
             <h3 className='summary-title'> Developing Material </h3>
                 <div>  
-                    Once you have a grasp of {developing} and can play the piece slowly while sight reading. Work on
-                     increasing the tempo while memorizing the music. Refine the overall interpretation of the piece. 
+                     Current: {developing}  
                      <br/>
                      Memorizing plan: {memorize}
                      <br/>
