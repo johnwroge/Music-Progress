@@ -3,15 +3,17 @@
 .outer-main {
     /* background:  */
     
-   box-shadow: 20%;
-    background-image: url('../public/music.png'); 
-    background-repeat: no-repeat;
-    display: grid;
+
+   
     margin-top: 50px;
     margin-left: 550px;
 }
 
 .todoTitle {
+
+  background-image: url('../public/music.png'); 
+  background-repeat: no-repeat;
+
     border: solid black 1px;
     display: grid;
     justify-content: center;
@@ -20,6 +22,11 @@
     border-radius: 20px;
     width: 500px;
     height: 200px;
+}
+
+.title span {
+  font-size: 80px;
+ 
 }
 
 .todo2 {
@@ -90,7 +97,8 @@ body {
     border-radius: 1rem;
     background-color: hsl(0, 0%, 100%);
     border: 4px solid hsl(0, 0%, 90%);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
