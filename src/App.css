@@ -1,27 +1,34 @@
 
 
 .outer-main {
-    /* background:  */
-    
+    display: flex; 
+    justify-content: center;
+    align-items: center;;
+    /* margin-top: 50px;
+    margin-left: 550px; */
+    flex-wrap: wrap;
+    /* background-image: url('../public/music.png'); 
+    background-repeat: no-repeat; */
+}
 
-   
-    margin-top: 50px;
-    margin-left: 550px;
+.outer-main img{
+  width: 150px;
+  /* margin-bottom: 25px;  */
+  /* margin: 0em;  */
 }
 
 .todoTitle {
 
-  background-image: url('../public/music.png'); 
-  background-repeat: no-repeat;
-
+  
+    display: flex;
     border: solid black 1px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin: 250px 250px 250px -100px;
-    border-radius: 20px;
-    width: 500px;
-    height: 200px;
+    /* display: grid; */
+    /* justify-content: center;
+    align-items: center; */
+    /* margin: 250px 250px 250px -100px;*/
+    border-radius: 20px; 
+    width: 200px;
+    height: 100px; 
 }
 
 .title span {
