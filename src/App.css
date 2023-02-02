@@ -61,11 +61,11 @@
 }
 
 .todo2 {
-    text-align: center;
+    /* text-align: center; */
     border: solid black 1px;
-    display: grid;
+    display: flexbox;
     justify-content: center;
-    width: 40%;
+    width: 500px;
     margin: auto;
     border-radius: 20px;
     /* width: 500px; */
