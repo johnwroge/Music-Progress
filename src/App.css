@@ -63,13 +63,15 @@
 .todo2 {
     /* text-align: center; */
     border: solid black 1px;
-    display: flexbox;
+    display: flex;
     justify-content: center;
     width: 500px;
     margin: auto;
     border-radius: 20px;
     /* width: 500px; */
     height: 600px;
+    margin: 10%; 
+    padding: 10px; 
 }
 
 .outer-main button {
