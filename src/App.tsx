@@ -9,6 +9,8 @@ import Develop from './client/Develop';
 import Performance from './client/Performance';
 import Summary from './client/Summary';
 import Technique from './client/Technique';
+import { Switch } from '@mantine/core';
+import Navbar from './client/Navbar';
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
 
   return (
     <div className='app'> 
+    <Navbar/>
     <Routes> 
       <Route path = "/" element = {<Title/>} />
       <Route path = "/todo" element= {<Todos/>} />

@@ -2,38 +2,62 @@
 
 .outer-main {
     display: flex; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;;
-    /* margin-top: 50px;
-    margin-left: 550px; */
-    flex-wrap: wrap;
-    /* background-image: url('../public/music.png'); 
-    background-repeat: no-repeat; */
 }
 
-.outer-main img{
+.img1 {
   width: 150px;
-  /* margin-bottom: 25px;  */
-  /* margin: 0em;  */
+  align-self: start;
+  margin: 5% auto;
+}
+
+.img2{
+  width: 150px;
+  align-self: end;
+
 }
 
 .todoTitle {
-
-  
     display: flex;
     border: solid black 1px;
-    /* display: grid; */
-    /* justify-content: center;
-    align-items: center; */
-    /* margin: 250px 250px 250px -100px;*/
     border-radius: 20px; 
     width: 200px;
     height: 100px; 
 }
 
-.title span {
+.navbar {
+  display: flex;
+  width: 100%;
+  height: 100px; 
+  align-items: center;
+
+  background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
+}
+
+.navbar li {
+  display: flex;
+  list-style: none;
+  /* justify-content: space-between; */
+}
+
+ .left {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-evenly; */
+
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  margin-left: 50%;
+}
+
+.title  {
   font-size: 80px;
- 
 }
 
 .todo2 {
@@ -48,23 +72,17 @@
     height: 600px;
 }
 
-
-.title {
-    width: 250px;
-    display: grid;
+.outer-main button {
     justify-content: center;
-    margin-left: 15%;
-}
-
-.main-par {
-
-
-}
+    align-items: center;
+    width: 150px;
+    height: 50px; 
+    border-radius: 20px;
+    box-shadow: 1em;
+    background-color: rgb(246, 209, 5);
+  }
 /* need button styling */
-.next {
-  margin-left: 38%;
 
-}
 
 .summary-title {
     margin-left: auto;
