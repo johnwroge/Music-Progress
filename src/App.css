@@ -7,6 +7,13 @@
     align-items: center;;
 }
 
+.app {
+  display: grid;
+ align-items: center;
+ justify-items: center;
+
+}
+
 .img1 {
   width: 150px;
   align-self: start;
@@ -33,6 +40,7 @@
   height: 100px; 
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  /* background: linear-gradient(269.3deg, rgb(69, 16, 129) 1.6%, rgb(154, 58, 127) 40.4%, rgb(242, 173, 78) 73.5%, rgb(250, 209, 152) 99.2%); */
   background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
 }
 
@@ -63,14 +71,17 @@
     display: flex;
     flex-direction: column;
     border: solid black 1px;
-    width: 100;
-    height: 100;
-    justify-content: center;
-    align-items: center;
+    width: 500px;
+    height: 400px;
+    /* width: 100; */
+    /* height: 100; */
+    //justify-content: center; 
+     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
  button {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 150px;
@@ -82,9 +93,10 @@
   }
 
 .outerbutton {
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
   }
 /* need button styling */
 
