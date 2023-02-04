@@ -72,11 +72,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    /* width: 500px; */
     /* margin: auto; */
     border-radius: 20px;
     /* width: 500px; */
-    height: 600px;
+    /* height: 600px; */
     margin: 10%; 
     padding: 10px; 
 }
@@ -104,11 +104,11 @@
 }
 
 textarea {
-  font: 1.25rem / 1.5 sans-serif;
+  /* font: 1.25rem / 1.5 sans-serif;
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.75rem; */
 }
 
 body {
@@ -126,7 +126,7 @@ body {
   }
   
   form {
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     padding: 2rem;
     border-radius: 1rem;
     background-color: hsl(0, 0%, 100%);
@@ -134,7 +134,7 @@ body {
     display: flex;
     flex-direction: column;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2rem; */
   }
   
   .full-width {
