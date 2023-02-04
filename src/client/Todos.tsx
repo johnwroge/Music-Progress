@@ -27,6 +27,7 @@ export default function Todos (){
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
+
     }
 
     return (
@@ -63,9 +64,7 @@ export default function Todos (){
                     >
                 </textarea>
                 
-           <button className='next'> 
-            Submit 
-            </button>
+           
         </form>
             <Link
                 to = "/develop"
@@ -77,6 +76,7 @@ export default function Todos (){
             >
             <button className="next"> Move on to Developing Material </button>
             </Link>
+            <button > Submit </button>
         </div>
     )
 }
