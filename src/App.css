@@ -1,4 +1,11 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Space Mono', monospace;
+}
 
 .outer-main {
     display: flex; 
@@ -54,6 +61,7 @@
   align-items: center;
   padding: 20px;
   column-gap: 20px;
+  font-size: 20px;
 }
 
 .right {
@@ -61,6 +69,7 @@
   align-items: center;
   margin-left: 50%;
   column-gap: 20px;
+  font-size: 20px;
 }
 
 .title  {
@@ -75,8 +84,8 @@
     height: 400px;
     /* width: 100; */
     /* height: 100; */
-    //justify-content: center; 
-     align-items: center;
+    justify-content: center; 
+    align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
