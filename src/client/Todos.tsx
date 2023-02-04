@@ -31,6 +31,8 @@ export default function Todos (){
     }
 
     return (
+
+        <> 
         <div className = "todo2"> 
        
         <form onSubmit={handleSubmit} >
@@ -66,17 +68,22 @@ export default function Todos (){
                 
            
         </form>
+        </div>
+        
+        <div className='outerbutton'> 
+            <button > Submit </button>
             <Link
                 to = "/develop"
                 state = {{
                     piece: formData.piece,
                     number: formData.number,
                     plan: formData.plan
-                   }}
-            >
-            <button className="next"> Move on to Developing Material </button>
-            </Link>
-            <button > Submit </button>
+                }}
+                > <button className="next"> Move on to Developing Material </button>
+             </Link>
         </div>
+            
+        </>
+        
     )
 }

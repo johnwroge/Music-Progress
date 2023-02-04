@@ -1,6 +1,7 @@
 .app {
     /* background-color: lightblue; */
-    background: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #54f1e1 100%);
+    /* background: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #54f1e1 100%); */
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     min-height: 100%;
     min-width: 1024px;
     /* Set up proportionate scaling */
@@ -14,7 +15,7 @@
     left: 0; */
 }
 
-html {
-    background: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #54f1e1 100%);
-
+body {
+    /* background: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #54f1e1 100%); */
+   background: linear-gradient(to bottom, #fff1eb 0%, #ace0f9 100%);
 }

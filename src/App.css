@@ -32,7 +32,7 @@
   width: 100%;
   height: 100px; 
   align-items: center;
-
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
   background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
 }
 
@@ -63,8 +63,8 @@
     display: flex;
     flex-direction: column;
     border: solid black 1px;
-    width: 500px;
-    height: 700px;
+    width: 100;
+    height: 100;
     justify-content: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -75,9 +75,16 @@
     align-items: center;
     width: 150px;
     height: 50px; 
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 1em;
     background-color: rgb(246, 209, 5);
+    flex-direction: row; 
+  }
+
+.outerbutton {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 /* need button styling */
 
