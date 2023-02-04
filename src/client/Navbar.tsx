@@ -15,9 +15,9 @@ export default function Navbar (){
                 </ul>
 
                 <ul className='right'> 
-                    <li> stuff is gonna go here</li> 
-                    <li> github icon </li>
-                    <li> login </li>
+                    <li> Stuff </li> 
+                    <li> Github  </li>
+                    <li> Login </li>
 
                 </ul>
             </nav>

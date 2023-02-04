@@ -45,7 +45,11 @@
  .left {
   display: flex;
   align-items: center;
+  padding: 20px;
+  /* margin: 10px 10px 10px 10px; */
   /* justify-content: space-evenly; */
+  /* row-gap: 20px; */
+  column-gap: 20px;
 
 }
 
@@ -54,6 +58,7 @@
   align-items: center;
   /* justify-content: space-between; */
   margin-left: 50%;
+  column-gap: 20px;
 }
 
 .title  {
@@ -63,10 +68,12 @@
 .todo2 {
     /* text-align: center; */
     border: solid black 1px;
+    box-shadow: 10px 5px 5px grey;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 500px;
-    margin: auto;
+    /* margin: auto; */
     border-radius: 20px;
     /* width: 500px; */
     height: 600px;
