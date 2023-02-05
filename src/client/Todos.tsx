@@ -1,6 +1,8 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
 import { Link } from "react-router-dom";
+//note: nanoid for ids if you want to retrieve and display these items
+import {nanoid} from 'nanoid'
 
 export default function Todos (){
 
