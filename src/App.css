@@ -22,7 +22,7 @@
 }
 
 .img1 {
-  width: 150px;
+  width: 125px;
   align-self: start;
   margin: 5% auto;
 }
@@ -44,7 +44,7 @@
 .navbar {
   display: flex;
   width: 100%;
-  height: 100px; 
+  height: 80px; 
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
   /* background: linear-gradient(269.3deg, rgb(69, 16, 129) 1.6%, rgb(154, 58, 127) 40.4%, rgb(242, 173, 78) 73.5%, rgb(250, 209, 152) 99.2%); */
@@ -61,7 +61,7 @@
   align-items: center;
   padding: 20px;
   column-gap: 20px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .right {
@@ -69,7 +69,7 @@
   align-items: center;
   margin-left: 50%;
   column-gap: 20px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .title  {
@@ -80,10 +80,10 @@
     display: flex;
     flex-direction: column;
     border: solid black 1px;
+    border-radius: 5px;
     width: 500px;
-    height: 400px;
-    /* width: 100; */
-    /* height: 100; */
+    height: 600px;
+   background: whitesmoke;
     justify-content: center; 
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -106,6 +106,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
   }
 /* need button styling */
 
@@ -121,11 +124,11 @@
 }
 
 .todo2 textarea {
-  /* font: 1.25rem / 1.5 sans-serif;
+  font: 1.25rem / 1.5 sans-serif;
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding: 0.5rem 0.75rem; */
+  padding: 0.5rem 0.75rem;
 }
 
 body {

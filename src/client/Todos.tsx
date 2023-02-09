@@ -68,12 +68,12 @@ export default function Todos (){
                     >
                 </textarea>
                 
-           
+                <button > Submit </button>
         </form>
         </div>
         
         <div className='outerbutton'> 
-            <button > Submit </button>
+           
             <Link
                 to = "/develop"
                 state = {{
