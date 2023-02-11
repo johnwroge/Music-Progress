@@ -69,10 +69,9 @@ export default function Develop (){
                      value={formData.memorize}
                     >
                 </textarea>
-           <button className='next'> 
-            Submit 
-            </button>
+    
         </form>
+        <div className='button-container'>
             <Link
                 to = "/performance"
                 state = {{
@@ -85,7 +84,10 @@ export default function Develop (){
                    }}
             >
             <button className="next"> Move on to Performance Material </button>
-            </Link>
+            </Link>  
+            <button className='submit'> Submit </button>  
+        </div> 
+           
         </div>
     )
 }

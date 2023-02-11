@@ -94,14 +94,14 @@ export default function Summary (this: any){
                 <div> {musicianship} </div>
                 <div> {diction} </div>
              </div>
-
+        <div className='button-container'>
             <Link
                 to = "/"
             >
             <button className="next"> Back to Homepage </button>
             </Link>
-
-            <button onClick ={handleGeneratePdf}> Download PDF </button>
+            <button className = "submit" onClick ={handleGeneratePdf}> Download PDF </button>
+        </div>  
         </div>
     )
 }

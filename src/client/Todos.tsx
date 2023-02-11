@@ -68,22 +68,24 @@ export default function Todos (){
                     >
                 </textarea>
                 
-                <button > Submit </button>
-        </form>
-        </div>
-        
-        <div className='outerbutton'> 
-           
-            <Link
+                <div className = "button-container"> 
+                <Link
                 to = "/develop"
                 state = {{
                     piece: formData.piece,
                     number: formData.number,
                     plan: formData.plan
                 }}
-                > <button className="next"> Move on to Developing Material </button>
+                >
+                     <button className='move'> Move on to Developing Material </button>
              </Link>
+                     <button className='submit'> Submit </button>
+                </div>
+                
+        </form>
         </div>
+        
+       
             
         </>
         

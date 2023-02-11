@@ -71,11 +71,9 @@ export default function Technique (){
                      value={formData.diction}
                     >
                 </textarea>
-           <button className='next'> 
-            Submit 
-            </button>
         </form>
-            <Link
+        <div className='button-container'> 
+        <Link
                 to = "/summary"
                 state = {{
                     piece: location.state.piece,
@@ -94,6 +92,8 @@ export default function Technique (){
             >
             <button className="next"> Move on to Summary Page </button>
             </Link>
+            <button className='submit'> Submit </button>  
+         </div>
         </div>
     )
 }

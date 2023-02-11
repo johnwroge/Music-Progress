@@ -71,10 +71,8 @@ export default function Performance (){
                      value={formData.renew}
                     >
                 </textarea>
-           <button className='next'> 
-            Submit 
-            </button>
         </form>
+        <div className='button-container'>
             <Link
                 to = "/technique"
                 state = {{
@@ -91,6 +89,9 @@ export default function Performance (){
             >
             <button className="next"> Move on to Technique </button>
             </Link>
+            <button className='submit'> Submit </button>  
+        </div>
+            
         </div>
     )
 }
