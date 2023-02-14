@@ -88,7 +88,7 @@ export default function Summary (this: any){
                 </div>
             <h3 className='summary-title'> Technique </h3>
                 <div>
-                    {technique}
+                    Technical Exercises: {technique}
                 </div>
             <h3 className='summary-title'> Musicianship </h3>
                 <div> {musicianship} </div>
