@@ -12,7 +12,7 @@ export default function Title (){
 
             <div className = "outer-main"> 
                 <h2 > Welcome to  </h2>
-                <h1 className='title' > Musical Progress </h1>
+                <h1 className='title' >Musical Progress</h1>
                 <p> Fill out the text areas to create a new practice sheet! </p>
                     <Link to = "/todo">
                     <button className="next">Get Started</button>

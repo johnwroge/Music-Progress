@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { useContext, useState } from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, MemoryRouter} from 'react-router-dom';
 // import { Context } from './Context';
 import './App.css'
 import Todos from './client/Todos';
@@ -15,11 +15,19 @@ import Navbar from './client/Navbar';
 
 function App() {
   
-
+const AppLayout:any = () => {
+  return(
+  <>
+    <Navbar/>
+  </>
+  )
+}
   return (
     <div className='app'> 
     <Navbar/>
     <Routes> 
+      
+      
       <Route path = "/" element = {<Title/>} />
       <Route path = "/todo" element= {<Todos/>} />
       <Route path = "/develop" element = {<Develop/>} />
