@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import {useLocation} from "react-router-dom";
 import { Link } from "react-router-dom";
 import { jsPDF } from 'jspdf';
+import useSWR from "swr"; 
 
 export default function Summary (this: any){
 
@@ -26,15 +27,9 @@ export default function Summary (this: any){
        const technique = location.state.technique;
        const musicianship = location.state.musicianship; 
 
-       //need to fix download pdf issue, tried two different methods and neither worked 
 
+    //helper function to generate pdf for user
     const handleGeneratePdf = () => {
-		// const doc = new jsPDF({
-		// 	format: 'a4',
-        //     // format: [4,2],
-		// 	unit: 'px',
-		// });
-
         const doc = new jsPDF({
             orientation: 'l',
             unit: 'pt',
@@ -52,9 +47,49 @@ export default function Summary (this: any){
 		});
 	};
 
+    //would like to incorporate some kind of support with areas of interest, i.e. tips to memorize, play cleaner ect
     const suggestions = ['Remember to divide into Sections.','Establish interpretative/technical plan and maintain slow tempo until you have a feel for the music ',
 'Once you have a grasp of and can play the piece slowly while sight reading.', 'Work on increasing the tempo while memorizing the music.', 'Refine the overall interpretation of the piece. '
  ]
+
+ //connecting with backend
+
+export interface Todo {
+    id: number;
+    title: string;
+    body: string; 
+    done: boolean; 
+
+    piece: string;
+    number: number;
+    plan: string;
+    developing: string;
+    refinement: string;
+    memorize: string;
+    perform: string;
+    memory: string;
+    renew: string;
+    technique: string;
+    musicianship: string;
+    diction: string; 
+}
+
+
+ export const ENDPOINT = "http://localhost:4000";
+
+ const fetcher = (url: string) =>
+   fetch(`${ENDPOINT}/${url}`).then((r) => r.json());
+ 
+ function App() {
+   const { data, mutate } = useSWR<Todo[]>("api/todos", fetcher);
+ 
+   async function markTodoAdDone(id: number) {
+     const updated = await fetch(`${ENDPOINT}/api/todosn/${id}/done`, {
+       method: "PATCH",
+     }).then((r) => r.json());
+ 
+     mutate(updated);
+   }
 
         
     return (

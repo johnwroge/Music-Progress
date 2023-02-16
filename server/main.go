@@ -13,6 +13,24 @@ type Todo struct {
 	Title string `json:"title"`
 	Done  bool   `json:"done"`
 	Body  string `json:"body"`
+
+	id: number;
+    title: string;
+    body: string; 
+    done: boolean; 
+
+    piece: string;
+    number: number;
+    plan: string;
+    developing: string;
+    refinement: string;
+    memorize: string;
+    perform: string;
+    memory: string;
+    renew: string;
+    technique: string;
+    musicianship: string;
+    diction: string; 
 }
 
 func main() {
