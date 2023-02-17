@@ -40,7 +40,7 @@ export default function Technique (){
     }
 
     return (
-        <div className = "todo2"> 
+        <div className = "technique"> 
        
         <form onSubmit={handleSubmit} >
             <h2> Technique Exercises</h2>
@@ -92,7 +92,8 @@ export default function Technique (){
             >
             <button className="next"> Move on to Summary Page </button>
             </Link>
-            <button className='submit'> Submit </button>  
+            <button className='submit'> Submit </button> 
+
          </div>
         </div>
     )

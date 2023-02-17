@@ -93,6 +93,20 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.technique {
+    display: flex;
+    flex-direction: column;
+    /* border: solid black 1px; */
+    /* border-radius: 5px; */
+    /* width: 800px;
+    height: 600px; */
+    /* background: whitesmoke; */
+    justify-content: center; 
+    align-items: center;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+
+}
+
 /* button styling on title page only*/
 .next {
     display: inline-block;

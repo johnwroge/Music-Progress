@@ -90,8 +90,8 @@ export default function Performance (){
             <button className="next"> Move on to Technique </button>
             </Link>
             <button className='submit'> Submit </button>  
-        </div>
             
+        </div>
         </div>
     )
 }
