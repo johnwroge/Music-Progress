@@ -96,14 +96,36 @@
 .technique {
     display: flex;
     flex-direction: column;
-    /* border: solid black 1px; */
-    /* border-radius: 5px; */
-    /* width: 800px;
-    height: 600px; */
-    /* background: whitesmoke; */
+    border: solid black 1px; 
+    border-radius: 5px;
+    width: 500px;
+    height: 600px; 
+    background: whitesmoke;
     justify-content: center; 
     align-items: center;
-    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+
+}
+
+.technique input {
+  margin-left: 10px;
+  width: 80%; 
+}
+
+.technique textarea {
+  font: 1.25rem / 1.5 sans-serif;
+  display: block;
+  box-sizing: border-box;
+  width: 80%;
+  /* padding: 0.5rem 0.75rem; */
+  padding: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px; 
+
+  /* font: 1.25rem / 1.5 sans-serif; */
+  /* display: block; */
+  /* box-sizing: border-box; */
+  /* width: 100%; */
+  /* padding: 0.5rem 0.75rem; */
 
 }
 

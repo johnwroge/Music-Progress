@@ -50,7 +50,9 @@ func main() {
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
-	//assigning todos to the return type of Todo struct
+	//assigning todos to the slice of the return type of todo. Slice
+	//has variable length, so it can change. provides reference to an array.
+	//continuous memory location.
 	todos := []Todo{}
 
 	//creating get route handler, c is short for context parameter, 
@@ -60,6 +62,7 @@ func main() {
 	})
 
 	app.Post("/api/todos", func(c *fiber.Ctx) error {
+		//
 		todo := &Todo{}
 
 		if err := c.BodyParser(todo); err != nil {

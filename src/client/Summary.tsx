@@ -127,8 +127,8 @@ export default function Summary (this: any){
                     Technical Exercises: {technique}
                 </div>
             <h3 className='summary-title'> Musicianship </h3>
-                <div> {musicianship} </div>
-                <div> {diction} </div>
+                <div> Musicianship: {musicianship} </div>
+                <div> Memorization Technique {diction} </div>
              </div>
         <div className='button-container'>
             <Link
