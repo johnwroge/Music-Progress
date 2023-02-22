@@ -50,47 +50,58 @@ export default function Summary (this: any){
     //would like to incorporate some kind of support with areas of interest, i.e. tips to memorize, play cleaner ect
     const suggestions = ['Remember to divide into Sections.','Establish interpretative/technical plan and maintain slow tempo until you have a feel for the music ',
 'Once you have a grasp of and can play the piece slowly while sight reading.', 'Work on increasing the tempo while memorizing the music.', 'Refine the overall interpretation of the piece. '
- ]
+ ];
 
- //connecting with backend
+ interface Todo {
+    // id: number;
+    // title: string;
+    // body: string; 
+    // done: boolean; 
 
-/*export interface Todo {
-    id: number;
-    title: string;
-    body: string; 
-    done: boolean; 
-
-    piece: string;
-    number: number;
-    plan: string;
-    developing: string;
-    refinement: string;
-    memorize: string;
-    perform: string;
-    memory: string;
-    renew: string;
-    technique: string;
-    musicianship: string;
-    diction: string; 
+    // piece: string;
+    // number: number;
+    // plan: string;
+    // developing: string;
+    // refinement: string;
+    // memorize: string;
+    // perform: string;
+    // memory: string;
+    // renew: string;
+    // technique: string;
+    // musicianship: string;
+    // diction: string; 
+    message: string; 
 }
-*/
 
 
-//  export const ENDPOINT = "http://localhost:4000";
 
-//  const fetcher = (url: string) =>
-//    fetch(`${ENDPOINT}/${url}`).then((r) => r.json());
+
+  const ENDPOINT = "http://localhost:4000";
+
+ const fetcher =  function () {
+//    fetch(`${ENDPOINT}/${url}`).then((r) => r.json()).then((data) => console.log(data));
+
+    const response =  fetch(`${ENDPOINT}/`)
+    .then(res => res.json())
+    .then((response) => {
+        console.log({response})
+    })
+    //  const hello =  response.json();
+    
+ }
+
+   
+   /* const { data, mutate } = useSWR<Todo[]>("api/todos", fetcher);
  
-//  function App() {
-//    const { data, mutate } = useSWR<Todo[]>("api/todos", fetcher);
+   async function markTodoAdDone(id: number) {
+     const updated = await fetch(`${ENDPOINT}/api/todosn/${id}/done`, {
+       method: "PATCH",
+     }).then((r) => r.json());
  
-//    async function markTodoAdDone(id: number) {
-//      const updated = await fetch(`${ENDPOINT}/api/todosn/${id}/done`, {
-//        method: "PATCH",
-//      }).then((r) => r.json());
+     mutate(updated);
+   */
+
  
-//      mutate(updated);
-//    }
 
         
     return (
@@ -137,6 +148,7 @@ export default function Summary (this: any){
             <button className="next"> Back to Homepage </button>
             </Link>
             <button className = "submit" onClick ={handleGeneratePdf}> Download PDF </button>
+            <button className='next' onClick = {fetcher}> Save Pratice Sheet </button>
         </div>  
         </div>
     )

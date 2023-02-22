@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useState, useEffect, ReactNode, ReactElement } from 'react';
-import jwt_decode, { JwtPayload } from 'jwt_decode';
+import jwt_decode, { JwtPayload } from 'jwt-decode';
 
 const Context: any = React.createContext<null>(null);
 

@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 export default function Technique (){
 
     const location = useLocation();
-    console.log(location.state)
     const [formData, setFormData] = React.useState(
         {
             technique: "",
@@ -41,7 +40,6 @@ export default function Technique (){
 
     return (
         <div className = "technique"> 
-       
         <form onSubmit={handleSubmit} >
             <h2> Technique Exercises</h2>
             <h5> What technique exercises would you like to add </h5>

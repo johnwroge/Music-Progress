@@ -64,6 +64,7 @@ func main() {
 	//contains information passed in request body
 	app.Get("/", func(c *fiber.Ctx) error {
 		fmt.Println("Invoked get endpoint")
+		// return c.JSON("Hi John")
 		return c.SendString("Hello from backend")
 	})
 
