@@ -52,15 +52,12 @@ export default function Summary (this: any){
 'Once you have a grasp of and can play the piece slowly while sight reading.', 'Work on increasing the tempo while memorizing the music.', 'Refine the overall interpretation of the piece. '
  ];
 
- interface Todo {
-    // id: number;
-    // title: string;
-    // body: string; 
-    // done: boolean; 
+  interface Todo {
+    id: number;
+    piece: string;
+    number: number;
+    plan: string;
 
-    // piece: string;
-    // number: number;
-    // plan: string;
     // developing: string;
     // refinement: string;
     // memorize: string;
@@ -70,24 +67,21 @@ export default function Summary (this: any){
     // technique: string;
     // musicianship: string;
     // diction: string; 
-    message: string; 
+    
 }
 
 
 
 
-  const ENDPOINT = "http://localhost:4000";
+
 
  const fetcher =  function () {
 //    fetch(`${ENDPOINT}/${url}`).then((r) => r.json()).then((data) => console.log(data));
 
-    const response =  fetch(`${ENDPOINT}/`)
+    const response =  fetch(`http://localhost:4000/`)
     .then(res => res.json())
-    .then((response) => {
-        console.log({response})
-    })
-    //  const hello =  response.json();
-    
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
  }
 
    
