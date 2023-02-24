@@ -9,7 +9,7 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
-	 "github.com/gofiber/fiber/v2/middleware/cors"
+  "github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 //create struct to define properties and types of values
@@ -38,20 +38,26 @@ func main() {
 	//create new fiber server (fiber instance)
 	app := fiber.New()
 
+
+	app.Use(cors.New(cors.Config{
+		//AllowOrigins: "http://localhost:3000",
+		// AllowOrigins: "*",
+		AllowHeaders: "Origin, Content-Type, Accept",
+		Access-Control-Allow-Origin: "*",
+		// Access-Control-Allow-Origin: http://localhost:5173
+		AllowCredentials: true,
+        AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
+	}))
 	//serving static files
-	 app.Static("/", "./index.html")
+	//  app.Static("/", "./index.html")
 	// app.Static("/", "../src/index.css")
 
 	//cross origin resource sharing middleware, 
 	//creating custom config
 
-	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:3000",
-		AllowHeaders: "Origin, Content-Type, Accept",
-	}))
+	
 
-	header := w.Header()
-	header.Add("Access-Control-Allow-Origin", "*")
+	
 
 	//assigning todos to the slice of the return type of todo. Slice
 	//has variable length, so it can change. provides reference to an array.
@@ -69,12 +75,10 @@ func main() {
 		// return c.SendString("Hello from backend")
 	})
 
-
 	app.Get("/:userId", func(c *fiber.Ctx) error{return nil})
 	
 	app.Put("/:userId", func(c *fiber.Ctx) error{return nil})
 
 	//if app.list throws error, invoke log.fatal
 	log.Fatal(app.Listen(":4000"))
-
 }
