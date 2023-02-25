@@ -53,7 +53,7 @@ export default function Summary (this: any){
  ];
 
   interface Todo {
-    id: number;
+    // id: number;
     piece: string;
     number: number;
     plan: string;
@@ -75,15 +75,31 @@ export default function Summary (this: any){
 
 
 
- const fetcher =  function () {
+ const saveItems =  async () => {
 //    fetch(`${ENDPOINT}/${url}`).then((r) => r.json()).then((data) => console.log(data));
-
-    const response =  fetch(`http://localhost:4000/`)
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+const headers: any = {
+    // 'Access-Control-Allow-Origin': true,
+    //  'content-type': 'application/json;charset=UTF-8',
+    'content-type': 'application/json'
+}
+try {
+    const response = await fetch(`http://localhost:4000/api`, {
+        method: 'POST',
+        mode: 'cors', 
+        headers: headers,
+        body:{
+            piece: piece,
+            number: number,
+            plan: plan,
+        },
+    })
+   const items = await response.json();
+   console.log(items)
  }
-
+ catch (error) {
+    console.log(error);
+  }
+ }
    
    /* const { data, mutate } = useSWR<Todo[]>("api/todos", fetcher);
  
@@ -142,7 +158,7 @@ export default function Summary (this: any){
             <button className="next"> Back to Homepage </button>
             </Link>
             <button className = "submit" onClick ={handleGeneratePdf}> Download PDF </button>
-            <button className='next' onClick = {fetcher}> Save Pratice Sheet </button>
+            <button className='next' onClick = {saveItems}> Save Pratice Sheet </button>
         </div>  
         </div>
     )

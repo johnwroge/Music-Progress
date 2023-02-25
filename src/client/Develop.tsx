@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 export default function Develop (){
 
     const location = useLocation();
-    console.log(location.state)
     const [formData, setFormData] = React.useState(
         {
             developing: "",

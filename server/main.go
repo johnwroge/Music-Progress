@@ -4,11 +4,11 @@ package main
 
 import (
 	// "net/http"
-	
+	// "log"
 	"fmt"
 	"log"
 
-	"github.com/gofiber/fiber/v2"
+  "github.com/gofiber/fiber/v2"
   "github.com/gofiber/fiber/v2/middleware/cors"
 )
 
@@ -16,7 +16,7 @@ import (
 type Todo struct {
 	//id to identify each practice sheet
 	
-	ID 		 int		`json:"id"`
+	// ID 		 int		`json:"id"`
     Piece 	 string		`json:"piece"`
     Number	 int		`json:"number"`
     Plan	 string		`json:"plan"`
@@ -43,41 +43,69 @@ func main() {
 		//AllowOrigins: "http://localhost:3000",
 		// AllowOrigins: "*",
 		AllowHeaders: "Origin, Content-Type, Accept",
-		Access-Control-Allow-Origin: "*",
+		
 		// Access-Control-Allow-Origin: http://localhost:5173
 		AllowCredentials: true,
         AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
 	}))
 	//serving static files
-	//  app.Static("/", "./index.html")
+	app.Static("/", "index.html")
 	// app.Static("/", "../src/index.css")
 
 	//cross origin resource sharing middleware, 
 	//creating custom config
 
-	
-
-	
 
 	//assigning todos to the slice of the return type of todo. Slice
 	//has variable length, so it can change. provides reference to an array.
 	//continuous memory location.
 
-		// todos := []Todo{}
+	 todos := []Todo{}
 
 	//creating get route handler, c is short for context parameter, 
 	//contains information passed in request body
-	app.Get("/", func(c *fiber.Ctx) error {
-		fmt.Println("Route Working")
-		// err := c.SendString("API is working")
-		return c.SendString("Working")
-		// return c.JSON("Hi John")
-		// return c.SendString("Hello from backend")
+	app.Get("/api", func(c *fiber.Ctx) error {
+		fmt.Println("Get Route Working")
+	  	
+
+		return c.JSON("result")
 	})
 
-	app.Get("/:userId", func(c *fiber.Ctx) error{return nil})
+
+
+	//post route handler, to store relevant practice sheets in db
+	 app.Post("/api", func(c *fiber.Ctx) error {
+		fmt.Println("Post Route Working")
 	
-	app.Put("/:userId", func(c *fiber.Ctx) error{return nil})
+		// todo := &Todo{}	
+		todo := new(Todo)
+	
+
+		if err := c.BodyParser(todo); err != nil {
+			fmt.Println("error = ",err)
+			return c.SendStatus(200)
+		}
+
+		// todos = append(todos, *todo)
+	
+		// getting user if no error
+		fmt.Println("user = ", todo)
+		fmt.Println("user = ", todo.Piece)
+		fmt.Println("user = ", todo.Number)
+
+
+
+		return c.JSON(todos)
+	 })
+
+	 //route handler to replace specified fields in database
+	 app.Patch("/api", func(c *fiber.Ctx) error {
+		fmt.Println("Patch Route Working")
+
+		return c.JSON("Data change confirmation")
+	 })
+
+
 
 	//if app.list throws error, invoke log.fatal
 	log.Fatal(app.Listen(":4000"))
