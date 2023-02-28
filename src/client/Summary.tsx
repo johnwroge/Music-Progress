@@ -87,17 +87,17 @@ try {
         method: 'POST',
         mode: 'cors', 
         headers: headers,
-        body:{
+        body: JSON.stringify({
             piece: piece,
             number: number,
             plan: plan,
-        },
+        }),
     })
    const items = await response.json();
    console.log(items)
  }
  catch (error) {
-    console.log(error);
+    // console.log(error);
   }
  }
    
