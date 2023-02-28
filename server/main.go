@@ -4,9 +4,10 @@ import (
 	// "net/http"
 	"fmt"
 	"log"
-
-  "github.com/gofiber/fiber/v2"
-  "github.com/gofiber/fiber/v2/middleware/cors"
+  	"github.com/gofiber/fiber/v2"
+  	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/lib/pq"
+	"github.com/joho/godotenv"
 )
 
 //create struct to define properties and types of values
@@ -15,15 +16,15 @@ type Todo struct {
     Piece 	 string		`json:"piece"`
     Number	 string		`json:"number"`
     Plan	 string		`json:"plan"`
-    // Developing string	`json:"developing"`
-    // Refinement string	`json:"refinement"`
-    // Memorize string		`json:"memorize"`
-    // Perform string		`json:"perform"`
-    // Memory string		`json:"memory"`
-    // Renew string		`json:"renew"`
-    // Technique string	`json:"technique"`
-    // Musicianship string `json:"musicianship"`
-    // Diction string		`json:"diction"` 
+    Developing string	`json:"developing"`
+    Refinement string	`json:"refinement"`
+    Memorize string		`json:"memorize"`
+    Perform string		`json:"perform"`
+    Memory string		`json:"memory"`
+    Renew string		`json:"renew"`
+    Technique string	`json:"technique"`
+    Musicianship string `json:"musicianship"`
+    Diction string		`json:"diction"` 
 }
 
 func main() {
