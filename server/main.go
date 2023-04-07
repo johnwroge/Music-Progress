@@ -6,8 +6,8 @@ import (
 	"log"
   	"github.com/gofiber/fiber/v2"
   	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/lib/pq"
-	"github.com/joho/godotenv"
+	// "github.com/lib/pq"
+	// "github.com/joho/godotenv"
 )
 
 //create struct to define properties and types of values

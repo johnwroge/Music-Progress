@@ -47,9 +47,13 @@ export default function Summary (this: any){
 		});
 	};
 
-    //would like to incorporate some kind of support with areas of interest, i.e. tips to memorize, play cleaner ect
-    const suggestions = ['Remember to divide into Sections.','Establish interpretative/technical plan and maintain slow tempo until you have a feel for the music ',
-'Once you have a grasp of and can play the piece slowly while sight reading.', 'Work on increasing the tempo while memorizing the music.', 'Refine the overall interpretation of the piece. '
+    //would like to incorporate some kind of support with areas of interest, i.e. tips to memorize, play cleaner etc
+    const suggestions = 
+    ['Remember to divide into Sections.',
+    'Establish interpretative/technical plan and maintain slow tempo until you have a feel for the music ',
+    'Once you have a grasp of and can play the piece slowly while sight reading.', 
+    'Work on increasing the tempo while memorizing the music.', 
+    'Refine the overall interpretation of the piece. '
  ];
 
   interface Todo {
@@ -57,22 +61,16 @@ export default function Summary (this: any){
     piece: string;
     number: number;
     plan: string;
-
-    // developing: string;
-    // refinement: string;
-    // memorize: string;
-    // perform: string;
-    // memory: string;
-    // renew: string;
-    // technique: string;
-    // musicianship: string;
-    // diction: string; 
-    
+    developing: string;
+    refinement: string;
+    memorize: string;
+    perform: string;
+    memory: string;
+    renew: string;
+    technique: string;
+    musicianship: string;
+    diction: string; 
 }
-
-
-
-
 
 
  const saveItems =  async () => {
@@ -91,29 +89,25 @@ try {
             piece: piece,
             number: number,
             plan: plan,
+            developing: developing,
+            refinement: refinement,
+            memorize: memorize,
+            perform: perform,
+            memory: memory,
+            renew: renew,
+            technique: technique,
+            musicianship: musicianship,
+            diction: diction 
         }),
     })
    const items = await response.json();
-   console.log(items)
+   console.log('items',items)
  }
  catch (error) {
     // console.log(error);
   }
  }
-   
-   /* const { data, mutate } = useSWR<Todo[]>("api/todos", fetcher);
- 
-   async function markTodoAdDone(id: number) {
-     const updated = await fetch(`${ENDPOINT}/api/todosn/${id}/done`, {
-       method: "PATCH",
-     }).then((r) => r.json());
- 
-     mutate(updated);
-   */
 
- 
-
-        
     return (
         <div className = "summary" > 
        <div ref = {reportTemplateRef} > 
