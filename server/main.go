@@ -6,6 +6,7 @@ import (
 	"log"
   	"github.com/gofiber/fiber/v2"
   	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/johnwroge/music-progress/configs"
 	
 	// "github.com/lib/pq"
 	// "github.com/joho/godotenv"
@@ -32,12 +33,10 @@ func main() {
 	
 	//create new fiber server (fiber instance)
 	app := fiber.New()
-
-
+	
+	configs.ConnectDB()
+	
 	app.Use(cors.New(cors.Config{
-		//AllowOrigins: "http://localhost:3000",
-		// AllowOrigins: "*",
-		// Access-Control-Allow-Origin: http://localhost:5173
 		AllowHeaders: "Origin, Content-Type, Accept",
 		AllowCredentials: true,
         AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
@@ -71,7 +70,7 @@ func main() {
 		return c.JSON("Data change confirmation")
 	 })
 
-
+	
 	//if app.list throws error, invoke log.fatal
 	log.Fatal(app.Listen(":4000"))
 }

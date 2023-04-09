@@ -1,7 +1,5 @@
 package configs
 
-
-
 import (
     "context"
     "fmt"
@@ -13,6 +11,12 @@ import (
 
 //function that configured client to use the correct URI and check for any errors. 
 func ConnectDB() *mongo.Client  {
+    
+    // const dbName = "go-fiber-cluster"
+    // var mongoURI = EnvMongoURI() + dbName; 
+
+
+    // client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
     client, err := mongo.NewClient(options.Client().ApplyURI(EnvMongoURI()))
     if err != nil {
         log.Fatal(err)
@@ -33,11 +37,11 @@ func ConnectDB() *mongo.Client  {
     return client
 }
 
-//Client instance, used when we create collections
+// Client instance, used when we create collections
 var DB *mongo.Client = ConnectDB()
 
 //getting database collections, to retrieve and collect collections 
 func GetCollection(client *mongo.Client, collectionName string) *mongo.Collection {
-    collection := client.Database("golangAPI").Collection(collectionName)
+    collection := client.Database("go-fiber-cluster").Collection(collectionName)
     return collection
 }
