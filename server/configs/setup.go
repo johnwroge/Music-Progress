@@ -7,35 +7,55 @@ import (
     "time"
     "go.mongodb.org/mongo-driver/mongo"
     "go.mongodb.org/mongo-driver/mongo/options"
+    // "go.mongodb.org/mongo-driver/bson"
 )
+
+type MongoInstance struct {
+	Client *mongo.Client
+	Db     *mongo.Database
+}
+
+var mg MongoInstance
+
+
+const dbName = "Cluster0"
+    // var mongoURI = EnvMongoURI() + dbName; 
+// const mongoURI = "mongo_uri" + dbName
+
+ var mongoURI  = EnvMongoURI();
 
 //function that configured client to use the correct URI and check for any errors. 
 func ConnectDB() *mongo.Client  {
+    // fmt.Println(mongoURI)
     
-    // const dbName = "go-fiber-cluster"
-    // var mongoURI = EnvMongoURI() + dbName; 
+    client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
 
-
-    // client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
-    client, err := mongo.NewClient(options.Client().ApplyURI(EnvMongoURI()))
     if err != nil {
         log.Fatal(err)
-    }
-	//timeout of 10 seconds
-    ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+    }  
+    
+    
+	// timeout of 10 seconds
+    ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+    defer cancel()
+
     err = client.Connect(ctx)
+    db := client.Database(dbName)
+
     if err != nil {
         log.Fatal(err)
     }
 
-    //ping the database to check for connection
-    err = client.Ping(ctx, nil)
-    if err != nil {
-        log.Fatal(err)
-    }
+    mg = MongoInstance{
+		Client: client,
+		Db:     db,
+	}
     fmt.Println("Connected to MongoDB")
-    return client
+	return client
 }
+
+
+
 
 // Client instance, used when we create collections
 var DB *mongo.Client = ConnectDB()
