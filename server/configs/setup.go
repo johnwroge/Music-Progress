@@ -17,16 +17,14 @@ type MongoInstance struct {
 
 var mg MongoInstance
 
-
+//storing database name in variable
 const dbName = "Cluster0"
-    // var mongoURI = EnvMongoURI() + dbName; 
-// const mongoURI = "mongo_uri" + dbName
-
+   
  var mongoURI  = EnvMongoURI();
 
 //function that configured client to use the correct URI and check for any errors. 
 func ConnectDB() *mongo.Client  {
-    // fmt.Println(mongoURI)
+   
     
     client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
 
