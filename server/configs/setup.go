@@ -15,7 +15,7 @@ type MongoInstance struct {
 	Db     *mongo.Database
 }
 
-var mg MongoInstance
+var Mg MongoInstance
 
 //storing database name in variable
 const dbName = "Cluster0"
@@ -39,15 +39,16 @@ func ConnectDB() *mongo.Client  {
 
     err = client.Connect(ctx)
     db := client.Database(dbName)
-
+    
     if err != nil {
         log.Fatal(err)
     }
 
-    mg = MongoInstance{
+     Mg = MongoInstance{
 		Client: client,
 		Db:     db,
 	}
+     
     fmt.Println("Connected to MongoDB")
 	return client
 }
@@ -60,6 +61,6 @@ var DB *mongo.Client = ConnectDB()
 
 //getting database collections, to retrieve and collect collections 
 func GetCollection(client *mongo.Client, collectionName string) *mongo.Collection {
-    collection := client.Database("go-fiber-cluster").Collection(collectionName)
+    collection := client.Database("Cluster0").Collection(collectionName)
     return collection
 }
