@@ -19,19 +19,16 @@ var Mg MongoInstance
 
 //storing database name in variable
 const dbName = "Cluster0"
-   
- var mongoURI  = EnvMongoURI();
+var mongoURI  = EnvMongoURI();
 
 //function that configured client to use the correct URI and check for any errors. 
 func ConnectDB() *mongo.Client  {
    
-    
     client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
 
     if err != nil {
         log.Fatal(err)
     }  
-    
     
 	// timeout of 10 seconds
     ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
