@@ -26,6 +26,9 @@ func ConnectDB() *mongo.Client  {
    
     client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
 
+    // clientOptions := options.Client().ApplyURI(mongoURI)
+    // client, err := mongo.Connect(context.TODO(), clientOptions)
+
     if err != nil {
         log.Fatal(err)
     }  

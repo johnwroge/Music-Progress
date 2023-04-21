@@ -23,9 +23,13 @@ import (
 var userCollection *mongo.Collection = configs.GetCollection(configs.DB, "users")
 var validate = validator.New()
 
+
+
 func CreateUser(c *fiber.Ctx) error {
+
     ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
     //ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+    
     var user models.User
     defer cancel()
 
@@ -46,9 +50,20 @@ func CreateUser(c *fiber.Ctx) error {
         Title:    user.Title,
     }
 
-    fmt.Println(newUser)
-    // result, err := userCollection.InsertOne(ctx, newUser)
+    // fmt.Println(newUser)
     result, err := userCollection.InsertOne(ctx, newUser)
+    // result, err := userCollection.InsertOne(context.TODO(), newUser)
+ 
+    fmt.Println(ctx)
+    
+
+
+
+
+
+
+
+
 
     if err != nil {
         return c.Status(http.StatusInternalServerError).JSON(responses.UserResponse{Status: http.StatusInternalServerError, Message: "error", Data: &fiber.Map{"data": err.Error()}})
@@ -168,11 +183,16 @@ func DeleteAUser(c *fiber.Ctx) error {
 
 
 func GetAllUsers(c *fiber.Ctx) error {
+
+    // collection := configs.Mg.Db.Collection("Sample")
+    // fmt.Println(collection)
+
     ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
     var users []models.User
     defer cancel()
 
     results, err := userCollection.Find(ctx, bson.M{})
+    // results, err := collection.Find(ctx, bson.M{})
 
     if err != nil {
         fmt.Println("Error handler invoked in user_controller.GetAllUsers")
