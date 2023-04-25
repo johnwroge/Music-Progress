@@ -21,13 +21,14 @@ import (
 // var validate = validator.New()
 
 var userCollection *mongo.Collection = configs.GetCollection(configs.DB, "users")
+
 var validate = validator.New()
 
 
 
 func CreateUser(c *fiber.Ctx) error {
 
-    ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+    ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
     //ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
     
     var user models.User
@@ -53,17 +54,6 @@ func CreateUser(c *fiber.Ctx) error {
     // fmt.Println(newUser)
     result, err := userCollection.InsertOne(ctx, newUser)
     // result, err := userCollection.InsertOne(context.TODO(), newUser)
- 
-    fmt.Println(ctx)
-    
-
-
-
-
-
-
-
-
 
     if err != nil {
         return c.Status(http.StatusInternalServerError).JSON(responses.UserResponse{Status: http.StatusInternalServerError, Message: "error", Data: &fiber.Map{"data": err.Error()}})
@@ -72,36 +62,11 @@ func CreateUser(c *fiber.Ctx) error {
     return c.Status(http.StatusCreated).JSON(responses.UserResponse{Status: http.StatusCreated, Message: "success", Data: &fiber.Map{"data": result}})
 }
 
-// func CreateUser(c *fiber.Ctx) error { 
-//     userCollection := configs.Mg.Db.Collection("users")
-//     // ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-//     user := new(models.User)
-//     // defer cancel()
-//     if err := c.BodyParser(user); err != nil {
-//         return c.Status(400).SendString(err.Error())
-//     }
-//     user.Id = ""
-//     //user is working
-//     fmt.Println(user)
-//     fmt.Println(c.Context())
-//     insertionResult, err := userCollection.InsertOne(c.Context(), user)
-//     fmt.Println(insertionResult)
-//     if err != nil {
-//         return c.Status(500).SendString(err.Error())
-//     }
-//     // get the just inserted record in order to return it as response
-// 		filter := bson.D{{Key: "_id", Value: insertionResult.InsertedID}}
-// 		createdRecord := userCollection.FindOne(c.Context(), filter)
-// 		// decode the Mongo record into Employee
-// 		createdUser := &models.User{}
-// 		createdRecord.Decode(createdUser)
-// 		// return the created Employee in JSON format
-// 		return c.Status(201).JSON(createdUser)
-// }
 
 func GetAUser(c *fiber.Ctx) error {
-    ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+    ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
     userId := c.Params("userId")
+    fmt.Println(userId)
     var user models.User
     defer cancel()
 
@@ -118,7 +83,7 @@ func GetAUser(c *fiber.Ctx) error {
 
 
 func EditAUser(c *fiber.Ctx) error {
-    ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+    ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
     userId := c.Params("userId")
     var user models.User
     defer cancel()
@@ -157,7 +122,7 @@ func EditAUser(c *fiber.Ctx) error {
 }
 
 func DeleteAUser(c *fiber.Ctx) error {
-    ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+    ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
     userId := c.Params("userId")
     defer cancel()
 
@@ -187,7 +152,7 @@ func GetAllUsers(c *fiber.Ctx) error {
     // collection := configs.Mg.Db.Collection("Sample")
     // fmt.Println(collection)
 
-    ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+    ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
     var users []models.User
     defer cancel()
 

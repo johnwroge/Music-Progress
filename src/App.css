@@ -1,6 +1,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Mono&display=swap');
 
+/* pseudoclass for top of document. allows variables for remaining
+css color: var(--black)*/
+:root {
+  --black: #171321;
+  
+
+}
+
+
+
+
 * {
   font-family: 'Inter', sans-serif;
   font-family: 'Oswald', sans-serif;

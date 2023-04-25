@@ -23,16 +23,12 @@ var mongoURI  = EnvMongoURI();
 
 //function that configured client to use the correct URI and check for any errors. 
 func ConnectDB() *mongo.Client  {
-   
     client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
-
     // clientOptions := options.Client().ApplyURI(mongoURI)
     // client, err := mongo.Connect(context.TODO(), clientOptions)
-
     if err != nil {
         log.Fatal(err)
-    }  
-    
+    }    
 	// timeout of 10 seconds
     ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
     defer cancel()
@@ -61,6 +57,7 @@ var DB *mongo.Client = ConnectDB()
 
 //getting database collections, to retrieve and collect collections 
 func GetCollection(client *mongo.Client, collectionName string) *mongo.Collection {
+    // collection := client.Database("Cluster0").Collection(collectionName)
     collection := client.Database("Cluster0").Collection(collectionName)
     return collection
 }
