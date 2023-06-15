@@ -17,11 +17,9 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-// configs.Mg.Db.Collection("users")
-// var validate = validator.New()
+
 
 var userCollection *mongo.Collection = configs.GetCollection(configs.DB, "users")
-
 var validate = validator.New()
 
 
@@ -66,11 +64,11 @@ func CreateUser(c *fiber.Ctx) error {
 func GetAUser(c *fiber.Ctx) error {
     ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
     userId := c.Params("userId")
-    fmt.Println(userId)
     var user models.User
     defer cancel()
 
     objId, _ := primitive.ObjectIDFromHex(userId)
+    fmt.Println(objId)
 
     err := userCollection.FindOne(ctx, bson.M{"id": objId}).Decode(&user)
     if err != nil {
