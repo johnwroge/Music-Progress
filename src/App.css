@@ -5,8 +5,6 @@
 css color: var(--black)*/
 :root {
   --black: #171321;
-  
-
 }
 
 
@@ -16,6 +14,10 @@ css color: var(--black)*/
   font-family: 'Inter', sans-serif;
   font-family: 'Oswald', sans-serif;
   font-family: 'Space Mono', monospace;
+}
+
+body {
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
 }
 
 .outer-main {
@@ -60,7 +62,7 @@ css color: var(--black)*/
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
   /* background: linear-gradient(269.3deg, rgb(69, 16, 129) 1.6%, rgb(154, 58, 127) 40.4%, rgb(242, 173, 78) 73.5%, rgb(250, 209, 152) 99.2%); */
-  background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
+  background: 
 }
 
 /* for navbar listitems */
