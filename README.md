@@ -5,7 +5,9 @@ To install dependencies
 
 run `npm install`
 
-For development
+For development:
+
+In frontend directory
 
 run `npm run dev`
 
@@ -17,7 +19,11 @@ Change into server directory.
 
 `cd server` 
 
+`go get`
+
 `go run main.go`
+
+
 
 
 
