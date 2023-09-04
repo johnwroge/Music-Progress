@@ -11,13 +11,13 @@ run `npm run dev`
 
 To start backend server
 
-Update mongo db database to use your url in an env file. 
+Include mongo db URI in .env to allow database access
+
+Change into server directory. 
 
 `cd server` 
 
 `go run main.go`
-
-
 
 
 
